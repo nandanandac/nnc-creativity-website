@@ -15,7 +15,7 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:white;line-height:1.6}
 a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
 header{position:sticky;top:0;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:5}
-nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;flex-shrink:0}.brand-logo{display:block;width:168px;height:auto;max-height:54px;object-fit:contain}.brand span{color:var(--accent)}.navlinks{display:flex;gap:24px;font-size:.94rem;color:#475569}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}.brand-logo{display:block;width:92px;height:auto;max-height:52px;object-fit:contain}.brand-name{font-size:1.12rem;font-weight:900;letter-spacing:-.5px;white-space:nowrap;color:var(--ink)}.brand-name span{color:var(--accent)}.navlinks{display:flex;gap:24px;font-size:.94rem;color:#475569}
 .btn{display:inline-block;padding:12px 20px;border-radius:9px;background:var(--accent);color:#171717;font-weight:800;border:0}.btn.dark{background:var(--ink);color:white}.hero{background:radial-gradient(circle at 85% 20%,#334155 0,#111827 48%,#0b1220 100%);color:white;padding:92px 0 86px}
 .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}.eyebrow{color:#fbbf24;text-transform:uppercase;letter-spacing:2px;font-size:.78rem;font-weight:800}.hero h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.05;letter-spacing:-2px;margin:16px 0}.hero p{font-size:1.12rem;color:#cbd5e1;max-width:650px}.hero-card{border:1px solid #ffffff30;background:#ffffff10;padding:28px;border-radius:18px}.hero-card strong{font-size:1.15rem}.hero-card li{margin:10px 0;color:#e2e8f0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero .btn.dark{border:1px solid #ffffff55;background:transparent}
 section{padding:76px 0}.section-head{max-width:680px;margin-bottom:34px}.section-head h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.12;letter-spacing:-1px;margin:8px 0}.section-head p,.muted{color:var(--muted)}.eyebrow.dark{color:#b77908}
@@ -32,7 +32,7 @@ section{padding:76px 0}.section-head{max-width:680px;margin-bottom:34px}.section
 @media(max-width:600px){
   .wrap{width:min(100% - 32px,1120px)}
   nav{height:64px;gap:10px}
-  .brand{min-width:0}.brand-logo{width:132px;max-height:44px}
+  .brand{min-width:0;gap:7px}.brand-logo{width:66px;max-height:40px}.brand-name{font-size:.88rem;letter-spacing:-.4px}
   header nav>.btn{padding:10px 13px;font-size:.84rem;white-space:nowrap}
   .hero{padding:54px 0 48px}
   .hero-grid{gap:24px}
@@ -72,7 +72,7 @@ section{padding:76px 0}.section-head{max-width:680px;margin-bottom:34px}.section
 </head>
 <body>
 <header><div class="wrap"><nav>
-<a class="brand" href="#" aria-label="NNC Creativity home"><img class="brand-logo" src="assets/nnc-creativity-logo.webp" alt="NNC Creativity logo" width="360" height="180"></a>
+<a class="brand" href="#" aria-label="NNC Creativity home"><img class="brand-logo" src="assets/nnc-creativity-logo.webp" alt="" width="360" height="180"><span class="brand-name">NNC <span>CREATIVITY</span></span></a>
 <div class="navlinks"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#portfolio">Graphic Design &amp; Packaging Portfolio</a><a href="#about">Why Us</a><a href="https://wa.me/918147508133" target="_blank" rel="noopener">Contact</a></div>
 <a class="btn" href="https://wa.me/918147508133?text=Hello%20NNC%20Creativity%2C%20I%20would%20like%20a%20design%20quote." target="_blank" rel="noopener">Get a Quote</a>
 </nav></div></header>
