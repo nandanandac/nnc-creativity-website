@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nandanandac.github.io/nnc-creativity-website/sitemap.xml
