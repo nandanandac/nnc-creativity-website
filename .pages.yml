@@ -1,0 +1,98 @@
+media:
+  input: images
+  output: /nnc-creativity-website/images
+  rename: safe
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: site
+    label: Website settings
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: brandName
+        label: Business name
+        type: string
+      - name: tagline
+        label: Tagline
+        type: string
+      - name: heroTitle
+        label: Main heading
+        type: string
+      - name: heroDescription
+        label: Introduction
+        type: text
+      - name: contactEmail
+        label: Contact email
+        type: string
+      - name: whatsapp
+        label: WhatsApp number
+        type: string
+      - name: fiverrUrl
+        label: Fiverr profile link
+        type: string
+
+  - name: services
+    label: Services
+    type: file
+    path: content/services.json
+    format: json
+    list: true
+    fields:
+      - name: number
+        label: Number / category
+        type: string
+      - name: title
+        label: Service name
+        type: string
+      - name: description
+        label: Description
+        type: text
+
+  - name: pricing
+    label: Pricing packages
+    type: file
+    path: content/pricing.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Package name
+        type: string
+      - name: price
+        label: Price in INR
+        type: number
+      - name: summary
+        label: Short description
+        type: text
+      - name: includes
+        label: What's included
+        type: text
+      - name: revisions
+        label: Revisions
+        type: string
+
+  - name: portfolio
+    label: Portfolio images
+    type: file
+    path: content/portfolio.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Project title
+        type: string
+      - name: category
+        label: Category
+        type: string
+      - name: image
+        label: Design image
+        type: image
+      - name: description
+        label: Project description
+        type: text
+
+settings:
+  content:
+    merge: true
