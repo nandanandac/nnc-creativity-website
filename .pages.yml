@@ -89,6 +89,9 @@ content:
       - name: image
         label: Design image
         type: image
+        options:
+          media: images
+          path: images
       - name: description
         label: Project description
         type: text
