@@ -18,18 +18,18 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 section{padding:76px 0}.section-head{max-width:680px;margin-bottom:34px}.section-head h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.12;letter-spacing:-1px;margin:8px 0}.section-head p,.muted{color:var(--muted)}.eyebrow.dark{color:#b77908}
 .services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.service{padding:22px;border:1px solid var(--line);border-radius:14px;background:white}.service .num{font-size:.8rem;color:#b77908;font-weight:900}.service h3{margin:10px 0 5px;font-size:1.05rem}.service p{margin:0;color:var(--muted);font-size:.92rem}
 .why{background:var(--paper)}.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:white;border:1px solid var(--line);padding:16px;border-radius:12px;font-weight:700}.check span{color:#b77908;margin-right:8px}
-.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.sample{aspect-ratio:4/3;border:1px dashed #cbd5e1;border-radius:14px;background:linear-gradient(135deg,#f1f5f9,#fff7ed);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#64748b;font-weight:700}.sample small{display:block;font-weight:400}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.portfolio-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.portfolio-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.portfolio-card div{padding:14px}.portfolio-card p{color:var(--muted);font-size:.9rem;margin:4px 0 0}.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.price-card{border:1px solid var(--line);border-radius:14px;padding:24px;background:#fff}.price-card h3{margin:0 0 8px}.price-card .price{font-size:2rem;font-weight:900;margin:10px 0}.price-card p{color:var(--muted)}.price-card .includes{font-size:.9rem}.sample{aspect-ratio:4/3;border:1px dashed #cbd5e1;border-radius:14px;background:linear-gradient(135deg,#f1f5f9,#fff7ed);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#64748b;font-weight:700}.sample small{display:block;font-weight:400}
 .clients{background:#111827;color:white}.clients .section-head p{color:#cbd5e1}.tags{display:flex;gap:10px;flex-wrap:wrap}.tag{border:1px solid #ffffff35;border-radius:999px;padding:9px 15px;color:#e2e8f0}
 .cta{background:#fffbeb;text-align:center}.cta p{max-width:650px;margin:10px auto 24px;color:#64748b}.cta h2{font-size:clamp(2rem,4vw,3rem);margin:0}
 footer{background:#0b1220;color:#cbd5e1;padding:28px 0}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem}
-@media(max-width:800px){.hero-grid,.why-grid{grid-template-columns:1fr}.services{grid-template-columns:repeat(2,1fr)}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}
+@media(max-width:800px){.hero-grid,.why-grid{grid-template-columns:1fr}.pricing-grid{grid-template-columns:1fr}.services{grid-template-columns:repeat(2,1fr)}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}
 @media(max-width:500px){.hero{padding:65px 0}.services,.portfolio-grid,.checklist{grid-template-columns:1fr}section{padding:58px 0}}
 </style>
 </head>
 <body>
 <header><div class="wrap"><nav>
 <a class="brand" href="#">NNC <span>CREATIVITY</span></a>
-<div class="navlinks"><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#about">Why Us</a><a href="#contact">Contact</a></div>
+<div class="navlinks"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#portfolio">Portfolio</a><a href="#about">Why Us</a><a href="#contact">Contact</a></div>
 <a class="btn" href="#contact">Get a Quote</a>
 </nav></div></header>
 
@@ -37,8 +37,8 @@ footer{background:#0b1220;color:#cbd5e1;padding:28px 0}.foot{display:flex;justif
 <section class="hero"><div class="wrap hero-grid">
 <div>
 <div class="eyebrow">Creative design • India-wide service</div>
-<h1>Packaging that makes your product stand out.</h1>
-<p>Professional product labels, food packaging, stickers, boxes and branding designs for startups, small businesses and growing brands.</p>
+<h1 id="hero-title">Packaging that makes your product stand out.</h1>
+<p id="hero-description">Professional product labels, food packaging, stickers, boxes and branding designs for startups, small businesses and growing brands.</p>
 <div class="hero-actions"><a class="btn" href="#contact">Discuss Your Project</a><a class="btn dark" href="#portfolio">View Portfolio</a></div>
 </div>
 <div class="hero-card"><div class="eyebrow">NNC Creativity</div><strong>Design services for your brand</strong>
@@ -48,7 +48,7 @@ footer{background:#0b1220;color:#cbd5e1;padding:28px 0}.foot{display:flex;justif
 
 <section id="services"><div class="wrap">
 <div class="section-head"><div class="eyebrow dark">What we create</div><h2>Design services</h2><p>From a single product label to a complete packaging look, get designs tailored to your product and brand.</p></div>
-<div class="services">
+<div class="services" id="services-list">
 <div class="service"><div class="num">01 / LABELS</div><h3>Product Label Design</h3><p>Clear, attractive labels that help your product look professional.</p></div>
 <div class="service"><div class="num">02 / FOOD</div><h3>Food & Beverage Packaging</h3><p>Packaging concepts for food products, coffee, masala and beverages.</p></div>
 <div class="service"><div class="num">03 / STICKERS</div><h3>Custom Sticker Design</h3><p>Product, brand, jar, bottle and promotional sticker designs.</p></div>
@@ -59,9 +59,11 @@ footer{background:#0b1220;color:#cbd5e1;padding:28px 0}.foot{display:flex;justif
 <div class="service"><div class="num">08 / PRINT</div><h3>Print-ready Artwork</h3><p>Final artwork prepared to the agreed printer specifications.</p></div>
 </div></div></section>
 
+<section id="pricing"><div class="wrap"><div class="section-head"><div class="eyebrow dark">Simple starting prices</div><h2>Design packages</h2><p>Introductory prices. Final quotes may vary depending on product details and design complexity.</p></div><div class="pricing-grid" id="pricing-list"></div><p class="muted">Printing, extra variants and complex artwork are quoted separately.</p></div></section>
+
 <section id="portfolio"><div class="wrap">
 <div class="section-head"><div class="eyebrow dark">Selected work</div><h2>Portfolio</h2><p>Add your completed design images in the spaces below. Replace each sample panel with your own project image before publishing.</p></div>
-<div class="portfolio-grid">
+<div class="portfolio-grid" id="portfolio-list">
 <div class="sample">Add your label design image<small>Project 01</small></div>
 <div class="sample">Add your packaging design image<small>Project 02</small></div>
 <div class="sample">Add your sticker design image<small>Project 03</small></div>
@@ -81,10 +83,10 @@ footer{background:#0b1220;color:#cbd5e1;padding:28px 0}.foot{display:flex;justif
 <div class="eyebrow dark">Let's work together</div><h2>Ready to improve your product packaging?</h2>
 <p>Send your product details, design requirements and preferred style. Contact NNC Creativity to discuss your project and pricing.</p>
 <div class="hero-actions" style="justify-content:center">
-<a class="btn" href="https://www.fiverr.com/s/2pQ0V28" target="_blank" rel="noopener">Visit Fiverr Profile</a>
-<a class="btn dark" href="mailto:nandac095@gmail.com?subject=Design%20Enquiry%20-%20NNC%20Creativity">Email NNC Creativity</a>
+<a class="btn" id="fiverr-link" href="https://www.fiverr.com/s/2pQ0V28" target="_blank" rel="noopener">Visit Fiverr Profile</a>
+<a class="btn dark" id="email-link" href="mailto:nandac095@gmail.com?subject=Design%20Enquiry%20-%20NNC%20Creativity">Email NNC Creativity</a>
 </div>
-<p style="font-size:.85rem;margin-top:18px">Before publishing: replace the Fiverr link and email address with your own details.</p>
+
 </div></section>
 </main>
 <p>
@@ -93,4 +95,23 @@ Phone / WhatsApp:
 <a href="https://wa.me/918147508133">+91 81475 08133</a>
 </p>
 <footer><div class="wrap foot"><div><strong style="color:white">NNC Creativity</strong> — Creative Designs That Make Your Brand Stand Out!</div><div>Serving clients across India · © 2026 NNC Creativity</div></div></footer>
+<script>
+(async function(){
+  const get = async path => { const r = await fetch(path); if(!r.ok) throw new Error(path); return r.json(); };
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  try {
+    const [site, services, pricing, portfolio] = await Promise.all([
+      get('content/site.json'), get('content/services.json'), get('content/pricing.json'), get('content/portfolio.json')
+    ]);
+    if(site.heroTitle) document.getElementById('hero-title').textContent = site.heroTitle;
+    if(site.heroDescription) document.getElementById('hero-description').textContent = site.heroDescription;
+    if(site.fiverrUrl) document.getElementById('fiverr-link').href = site.fiverrUrl;
+    if(site.contactEmail) document.getElementById('email-link').href = 'mailto:' + site.contactEmail + '?subject=Design%20Enquiry%20-%20NNC%20Creativity';
+    document.getElementById('services-list').innerHTML = services.map(s => '<article class="service"><div class="num">'+esc(s.number)+'</div><h3>'+esc(s.title)+'</h3><p>'+esc(s.description)+'</p></article>').join('');
+    document.getElementById('pricing-list').innerHTML = pricing.map(p => '<article class="price-card"><h3>'+esc(p.name)+'</h3><div class="price">₹'+Number(p.price).toLocaleString('en-IN')+'</div><p>'+esc(p.summary)+'</p><p class="includes">'+esc(p.includes)+'</p><strong>'+esc(p.revisions)+'</strong></article>').join('');
+    if(portfolio.length) document.getElementById('portfolio-list').innerHTML = portfolio.map(p => '<article class="portfolio-card"><img src="'+esc(p.image)+'" alt="'+esc(p.title)+'"><div><strong>'+esc(p.title)+'</strong><p>'+esc(p.category)+' · '+esc(p.description)+'</p></div></article>').join('');
+    document.title = site.brandName + ' | Packaging, Label & Sticker Design';
+  } catch(e) { console.warn('Editable website content could not be loaded; showing built-in page content.', e); }
+})();
+</script>
 </body></html>
