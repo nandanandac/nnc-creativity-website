@@ -21,7 +21,7 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between;ga
 section{padding:76px 0}.section-head{max-width:680px;margin-bottom:34px}.section-head h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.12;letter-spacing:-1px;margin:8px 0}.section-head p,.muted{color:var(--muted)}.eyebrow.dark{color:#b77908}
 .slider-viewport{overflow:hidden;border-radius:14px}.slider-track{display:flex;transition:transform .65s ease;will-change:transform}.slider-track>*{flex:0 0 100%;min-width:0}.service{padding:30px;border:1px solid var(--line);border-radius:14px;background:white;min-height:190px;display:flex;flex-direction:column;justify-content:center}.service h3{font-size:1.35rem}.slider-controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:18px}.slider-btn{border:1px solid var(--line);background:white;border-radius:999px;padding:10px 18px;font-weight:800;cursor:pointer}.slider-btn:hover{background:#f8fafc}.slider-dots{font-size:.9rem;color:var(--muted);min-width:64px;text-align:center}.service{padding:22px;border:1px solid var(--line);border-radius:14px;background:white}.service .num{font-size:.8rem;color:#b77908;font-weight:900}.service h3{margin:10px 0 5px;font-size:1.05rem}.service p{margin:0;color:var(--muted);font-size:.92rem}
 .why{background:var(--paper)}.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:white;border:1px solid var(--line);padding:16px;border-radius:12px;font-weight:700}.check span{color:#b77908;margin-right:8px}
-.portfolio-grid{display:flex;transition:transform .65s ease;will-change:transform}.portfolio-grid>*{flex:0 0 100%;min-width:0}.portfolio-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;max-width:760px;margin:auto;width:100%}.portfolio-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.portfolio-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.portfolio-card div{padding:14px}.portfolio-card p{color:var(--muted);font-size:.9rem;margin:4px 0 0}.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.price-card{border:1px solid var(--line);border-radius:14px;padding:24px;background:#fff}.price-card h3{margin:0 0 8px}.price-card .price{font-size:2rem;font-weight:900;margin:10px 0}.price-card p{color:var(--muted)}.price-card .includes{font-size:.9rem}.sample{aspect-ratio:4/3;border:1px dashed #cbd5e1;border-radius:14px;background:linear-gradient(135deg,#f1f5f9,#fff7ed);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#64748b;font-weight:700}.sample small{display:block;font-weight:400}
+.portfolio-grid{display:flex;transition:transform .65s ease;will-change:transform}.portfolio-grid>*{flex:0 0 100%;min-width:0}.portfolio-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;max-width:760px;margin:auto;width:100%}.portfolio-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.portfolio-card img{width:100%;height:clamp(260px,52vw,520px);object-fit:contain;object-position:center;display:block;background:#f8fafc;padding:10px}.portfolio-card{max-width:900px}.slider-viewport{width:100%;overflow:hidden;position:relative}.slider-track,.portfolio-grid{display:flex;gap:0;transition:transform .55s ease;will-change:transform}.slider-track>* ,.portfolio-grid>*{flex:0 0 100%;width:100%;min-width:100%}.service{min-height:210px;padding:clamp(22px,4vw,42px)}.slider-btn{min-width:112px;touch-action:manipulation}.portfolio-card div{padding:14px}.portfolio-card p{color:var(--muted);font-size:.9rem;margin:4px 0 0}.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.price-card{border:1px solid var(--line);border-radius:14px;padding:24px;background:#fff}.price-card h3{margin:0 0 8px}.price-card .price{font-size:2rem;font-weight:900;margin:10px 0}.price-card p{color:var(--muted)}.price-card .includes{font-size:.9rem}.sample{aspect-ratio:4/3;border:1px dashed #cbd5e1;border-radius:14px;background:linear-gradient(135deg,#f1f5f9,#fff7ed);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#64748b;font-weight:700}.sample small{display:block;font-weight:400}
 .clients{background:#111827;color:white}.clients .section-head p{color:#cbd5e1}.tags{display:flex;gap:10px;flex-wrap:wrap}.tag{border:1px solid #ffffff35;border-radius:999px;padding:9px 15px;color:#e2e8f0}
 .cta{background:#fffbeb;text-align:center}.cta p{max-width:650px;margin:10px auto 24px;color:#64748b}.cta h2{font-size:clamp(2rem,4vw,3rem);margin:0}
 .faq{background:#fff}.faq-list{display:grid;gap:12px;max-width:850px}.faq-list details{border:1px solid var(--line);border-radius:12px;padding:17px 20px;background:#fff}.faq-list summary{font-weight:800;cursor:pointer}.faq-list details p{color:var(--muted);margin:12px 0 0}.faq-list details[open]{border-color:#f3c45d}\nfooter{background:#0b1220;color:#cbd5e1;padding:28px 0}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem}
@@ -135,27 +135,49 @@ Phone: <a href="tel:+918147508133">+91 81475 08133</a> · WhatsApp: <a href="htt
 
     function setupSlider(trackId, prevId, nextId, countId, delay) {
       const track = document.getElementById(trackId);
+      const viewport = track && track.parentElement;
       const prev = document.getElementById(prevId);
       const next = document.getElementById(nextId);
       const count = document.getElementById(countId);
-      if (!track || !prev || !next || !count) return;
+      if (!track || !viewport || !prev || !next || !count) return;
       const slides = Array.from(track.children);
       if (!slides.length) return;
-      let index = 0, timer;
-      const paint = () => { track.style.transform = 'translateX(-' + (index * 100) + '%)'; count.textContent = (index + 1) + ' / ' + slides.length; };
+      let index = 0, timer = null, width = 0, touchStart = 0;
+      const sizeSlides = () => {
+        width = viewport.getBoundingClientRect().width;
+        slides.forEach(slide => { slide.style.flex = '0 0 ' + width + 'px'; slide.style.width = width + 'px'; });
+        paint();
+      };
+      const paint = () => {
+        track.style.transform = 'translate3d(-' + (index * width) + 'px,0,0)';
+        count.textContent = (index + 1) + ' / ' + slides.length;
+      };
       const go = step => { index = (index + step + slides.length) % slides.length; paint(); };
-      prev.addEventListener('click', () => go(-1));
-      next.addEventListener('click', () => go(1));
-      const start = () => { if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; clearInterval(timer); timer = setInterval(() => go(1), delay); };
-      const stop = () => clearInterval(timer);
-      track.parentElement.addEventListener('mouseenter', stop);
-      track.parentElement.addEventListener('mouseleave', start);
-      track.parentElement.addEventListener('focusin', stop);
-      track.parentElement.addEventListener('focusout', start);
-      paint(); start();
+      const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+      const start = () => {
+        stop();
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && slides.length > 1) {
+          timer = setInterval(() => go(1), delay);
+        }
+      };
+      prev.addEventListener('click', () => { go(-1); start(); });
+      next.addEventListener('click', () => { go(1); start(); });
+      viewport.addEventListener('mouseenter', stop);
+      viewport.addEventListener('mouseleave', start);
+      viewport.addEventListener('focusin', stop);
+      viewport.addEventListener('focusout', start);
+      viewport.addEventListener('touchstart', e => { touchStart = e.changedTouches[0].clientX; stop(); }, {passive:true});
+      viewport.addEventListener('touchend', e => {
+        const delta = e.changedTouches[0].clientX - touchStart;
+        if (Math.abs(delta) > 45) go(delta < 0 ? 1 : -1);
+        start();
+      }, {passive:true});
+      window.addEventListener('resize', sizeSlides);
+      sizeSlides();
+      start();
     }
-    setupSlider('services-list','services-prev','services-next','services-count',3500);
-    setupSlider('portfolio-list','portfolio-prev','portfolio-next','portfolio-count',4000);
+    setupSlider('services-list','services-prev','services-next','services-count',4000);
+    setupSlider('portfolio-list','portfolio-prev','portfolio-next','portfolio-count',5000);
 })();
 </script>
 </body></html>
