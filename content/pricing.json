@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Basic – Single Design",
+    "price": 499,
+    "summary": "For one product label or sticker design.",
+    "includes": "One product label or sticker; print-ready JPG/PDF",
+    "revisions": "2 revisions"
+  },
+  {
+    "name": "Standard – Packaging Design",
+    "price": 1499,
+    "summary": "For one pouch, box or food packaging design.",
+    "includes": "One packaging design; print-ready artwork",
+    "revisions": "2 revisions"
+  },
+  {
+    "name": "Premium – Brand Launch",
+    "price": 2499,
+    "summary": "A starter visual package for a new product brand.",
+    "includes": "One logo; one product label; one packaging mockup",
+    "revisions": "3 revisions"
+  }
+]
