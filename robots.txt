@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nandanandac.github.io/nnc-creativity-website/sitemap.xml
+Sitemap: https://glistening-stroopwafel-761820.netlify.app/sitemap.xml
